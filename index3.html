@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>CSS GRID 2</title>
+</head>
+<style>
+	.wrapper{
+		display:grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-auto-rows: minmax(100px, auto);
+		grid-gap: 1em;
+		justify-items:stretch;
+		align-items:stretch;
+	}
+	
+	.wrapper > div{
+		background: #eee;
+		padding: 1em;
+	}
+	.wrapper > div:nth-child(odd){
+		background: #ddd;
+	}
+	.box1{
+		/*align-self:start;*/
+	grid-column: 1/3; /* column expands 3 that way-->>> */
+	grid-row: 1/3; /* column expands 3 downward  */
+	}
+	.box2{
+		/*align-self:end;*/
+	grid-column: 3;
+	grid-row: 1/3;
+	}
+	.box3{
+		/*justify-self:end;*/
+	grid-column: 2/4;
+	grid-row: 3;
+	}
+	.box4{
+	grid-column: 1;
+	grid-row: 2/4;
+	border: 1px solid #333;
+	}
+
+
+</style>
+<body>
+	<div class="wrapper">
+		<div class="box box1">Box 1: starts at 1 and expands 3 to right (column) and 3 downward (row)</div>
+		<div class="box box2">Box 2</div>
+		<div class="box box3">Box 3: starts at column 2 and goes to column 4. </div>
+		<div class="box box4">Box 4: starts/stays in column 1 (vertical) and starts in row 2 and goes to row 4 . This makes it overlap box 1 </div>
+	</div>
+</body>
+</html>

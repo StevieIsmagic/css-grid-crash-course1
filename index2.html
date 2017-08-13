@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>CSS GRID 2</title>
+</head>
+<style>
+	.wrapper{
+		display:grid;
+	 /* grid-template-columns: 1fr 2fr 1fr; */
+		grid-template-columns:repeat(3, 1fr);
+		grid-gap: 1em;
+	 /* grid-auto-rows: 100px; */
+	    grid-auto-rows: minmax(100px, auto);
+	    /* ^^^ will be 100px by default, but if content of div goes beyond the 100px, then div will stretch; see div#2 */
+	}
+	.nested{
+		display:grid;
+		grid-template-columns:repeat(3, 1fr);
+		grid-auto-rows: 70px;
+		grid-gap: 1em;
+	}
+
+
+
+	.wrapper > div{
+		background: #eee;
+		padding: 1em;
+	}
+	.wrapper > div:nth-child(odd){
+		background: #ddd;
+	}
+
+	.nested > div{
+		border: #333 1px solid;
+		padding: 1em;
+
+
+	}
+
+</style>
+<body>
+	<div class="wrapper">
+		<div>
+		1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+		<div>
+		2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<div class="nested">
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+			<div>Lorem</div>
+		</div>
+		<div>
+		4Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+		<div>
+		5Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+		<div>
+		6Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+		<div>
+		7Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+		<div>
+		8Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</div>
+	</div>
+</body>
+</html>
