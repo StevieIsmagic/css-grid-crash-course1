@@ -1,4 +1,11 @@
 ok here we go
+
 try to push this ?
 
-one mor etime
+one more time..
+
+SUCCESS. You finally created / pushed a remote branch!!
+
+Progress feels great!
+
+=)
